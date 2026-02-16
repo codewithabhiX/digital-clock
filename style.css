@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+}
+
+body main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#outsideOfClock {
+  height: 40vh;
+  width: 50vw;
+  border: 2px solid black;
+  background-color: #272e38;
+}
+
+#container {
+  height: 70%;
+  width: 85%;
+  margin: 5% auto;
+  border: 2px solid black;
+  background-color: #0f1620;
+  border-radius: 8px;
+  position: relative;
+}
+
+#outsideOfClock div h1 {
+
+  color: white;
+  text-align: center;
+  height: 84%;
+  width: 100%;
+  font-size: clamp(7rem, 5vw + 1rem, 4rem);
+  margin: 1px;
+  font-family: monospace;
+}
+
+#day {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#day span {
+  margin-top: 5px;
+  color: #272e38;
+}
+
+#changetime {
+  margin-top: 7vh;
+  height: 6vh;
+  width: 7vw;
+  border: 1px solid black;
+  border-radius: 40px;
+  background-color: #272e38;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#t24 {
+  height: 100%;
+  width: 50%;
+  border-radius: 20px 0px 0px 20px;
+  background-color: #272e38;
+  color: white;
+  border: none;
+}
+
+#t12 {
+  height: 100%;
+  width: 50%;
+  border-radius: 0px 20px 20px 0px;
+  background-color: #272e38;
+  color: white;
+  border: none;
+}
+
+#changetime #btn {
+  height: 100%;
+  width: 50%;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+}
+
+#ampm{
+    display: inline-block;
+    
+    text-align: right;
+    color: white;
+    position: absolute;
+      right: 0;
+      bottom: 0;
+}
