@@ -1,18 +1,80 @@
 //timer
 export default function time(){
+let box = document.getElementById("box");
 
-let container = document.getElementById("container");
+let outsideOfClock = document.createElement("div");
+outsideOfClock.id="outsideOfClock";
+
+let container = document.createElement("div");
+container.id="container";
+
+let changetime = document.createElement("div");
+changetime.id="changetime";
+
+let day = document.createElement("div");
+day.id="day";
+
 let time = document.createElement("h1");
-let btn = document.getElementById("btn");
-let t12 = document.getElementById("t12");
+
+let btn  = document.createElement("button");
+btn .id = "btn";
+let t12 = document.createElement("button");
+t12.id = "t12";
+let t24 = document.createElement("button");
+t24.id = "t24";
+
 let ampm = document.createElement("span");
-
-let t24 = document.getElementById("t24");
-
 ampm.id = "ampm";
+
+
+//day
+let Day = new Date();
+
+let sun = document.createElement("span");
+sun.id = "sun";
+sun.textContent="SUN";
+let mon = document.createElement("span");
+mon.id = "mon";
+mon.textContent="MON";
+let tue = document.createElement("span");
+tue.id = "tue";
+tue.textContent="TUE";
+let wed = document.createElement("span");
+wed.id = "wed";
+wed.textContent="WED";
+let thu = document.createElement("span");
+thu.id = "thu";
+thu.textContent="THU";
+let fri = document.createElement("span");
+fri.id = "fri";
+fri.textContent="FRI";
+let sat = document.createElement("span");
+sat.id = "sat";
+sat.textContent="SAT";
+
+let dayArray = [sun, mon, tue, wed, thu, fri, sat];
+
+for(let i=0;i<dayArray.length;i++){
+  day.appendChild(dayArray[i]);
+}
+
+container.appendChild(day);
+outsideOfClock.appendChild(container);
+box.appendChild(outsideOfClock);
+dayArray[Day.getDay()].style.color = "white";
+
+
+
+box.appendChild(changetime);
+changetime.appendChild(t24);
+t24.textContent="24";
+changetime.appendChild(t12);
+t12.textContent="12";
+changetime.appendChild(btn);
 
 let id24 = createTime24();
 let id12;
+
 
 t24.addEventListener("click", function () {
   clearInterval(id12);
@@ -21,20 +83,6 @@ t24.addEventListener("click", function () {
   id24 = createTime24();
 });
 
-//day
-let Day = new Date();
-
-let sun = document.getElementById("sun");
-let mon = document.getElementById("mon");
-let tue = document.getElementById("tue");
-let wed = document.getElementById("wed");
-let thu = document.getElementById("thu");
-let fri = document.getElementById("fri");
-let sat = document.getElementById("sat");
-
-let dayArray = [sun, mon, tue, wed, thu, fri, sat];
-
-dayArray[Day.getDay()].style.color = "white";
 
 //12hour;
 
